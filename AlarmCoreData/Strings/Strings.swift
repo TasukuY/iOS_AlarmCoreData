@@ -9,5 +9,8 @@ import Foundation
 
 enum Strings {
     
+    
+    //Custom Cell Strings
+    static let cellIdentifier = "alarmCell"
 }
 

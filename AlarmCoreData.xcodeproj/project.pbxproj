@@ -13,6 +13,9 @@
 		C923F10A2812569B00367555 /* AlarmCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C923F1082812569B00367555 /* AlarmCoreData.xcdatamodeld */; };
 		C923F10C2812569C00367555 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C923F10B2812569C00367555 /* Assets.xcassets */; };
 		C923F10F2812569C00367555 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C923F10D2812569C00367555 /* LaunchScreen.storyboard */; };
+		C923F12128125F9900367555 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923F12028125F9900367555 /* Strings.swift */; };
+		C923F1232812604E00367555 /* Alarm+Convienience.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923F1222812604E00367555 /* Alarm+Convienience.swift */; };
+		C923F1252812614300367555 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923F1242812614300367555 /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		C923F10B2812569C00367555 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C923F10E2812569C00367555 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C923F1102812569C00367555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C923F12028125F9900367555 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		C923F1222812604E00367555 /* Alarm+Convienience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alarm+Convienience.swift"; sourceTree = "<group>"; };
+		C923F1242812614300367555 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,8 @@
 				C923F117281257AF00367555 /* Models */,
 				C923F118281257BB00367555 /* Views */,
 				C923F11A2812581600367555 /* Controllers */,
+				C923F11E28125F7A00367555 /* Strings */,
+				C923F11F28125F7E00367555 /* Notifications */,
 				C923F119281257C900367555 /* Supporting_Files */,
 			);
 			path = AlarmCoreData;
@@ -68,6 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				C923F1082812569B00367555 /* AlarmCoreData.xcdatamodeld */,
+				C923F1222812604E00367555 /* Alarm+Convienience.swift */,
+				C923F1242812614300367555 /* CoreDataStack.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -129,6 +139,21 @@
 			children = (
 			);
 			path = ModelControllers;
+			sourceTree = "<group>";
+		};
+		C923F11E28125F7A00367555 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				C923F12028125F9900367555 /* Strings.swift */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		C923F11F28125F7E00367555 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,7 +229,10 @@
 			files = (
 				C923F1002812569B00367555 /* AppDelegate.swift in Sources */,
 				C923F10A2812569B00367555 /* AlarmCoreData.xcdatamodeld in Sources */,
+				C923F12128125F9900367555 /* Strings.swift in Sources */,
+				C923F1252812614300367555 /* CoreDataStack.swift in Sources */,
 				C923F1022812569B00367555 /* SceneDelegate.swift in Sources */,
+				C923F1232812604E00367555 /* Alarm+Convienience.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

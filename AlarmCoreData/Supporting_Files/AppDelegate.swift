@@ -11,8 +11,38 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (accepted, error) in
+           if !accepted{
+               print("Notification access has been denied")
+           }
+        }
+        UNUserNotificationCenter.current().delegate = self
+        
+        return true
+    }
 
-
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { [self] authorized, error in
+            if let error = error {
+                print("there was an error requesting to show local notifications: \(error)")
+            }
+            
+            if authorized {
+                UNUserNotificationCenter.current().delegate = self
+                self.setNotificationCategories()
+                print("✅ User granted authorization to show local notification")
+            }else {
+                print("🛑 User denied authorization to show local notification")
+            }
+        }
+        
+        return true
+    }
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
@@ -77,5 +107,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
-}
+}//End of class
 
+extension AppDelegate: UNUserNotificationCenterDelegate{
+    
+}

@@ -10,80 +10,66 @@ import UIKit
 class AlarmDetailTableViewController: UITableViewController {
 
     //MARK: - IBOutlets
+    @IBOutlet weak var alarmFireDatePicker: UIDatePicker!
+    @IBOutlet weak var alarmTitleTextField: UITextField!
+    @IBOutlet weak var alarmIsEnabledButton: UIButton!
+    
     
     //MARK: - Properties
     var alarm: Alarm?
+    var isAlarmOn = true
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateView()
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    
+    //MARK: - IBActions
+    @IBAction func alarmIsEnabledButtonTapped(_ sender: UIButton) {
+        if let alarm = alarm {
+            AlarmController.shared.toggleIsEnabledFor(alarm: alarm)
+            isAlarmOn = alarm.isEnabled
+        }else {
+            isAlarmOn = !isAlarmOn
+        }
+        designIsEnabledButton()
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    
+    @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
+        guard let alarmTitle = alarmTitleTextField.text,
+              !alarmTitle.isEmpty
+        else { return }
+        let fireDate = alarmFireDatePicker.date
+        
+        if let alarm = alarm {
+            AlarmController.shared.update(alarm: alarm, newTitle: alarmTitle, newFireDate: fireDate, isEnabled: isAlarmOn)
+        }else {
+            AlarmController.shared.createAlarm(withTitle: alarmTitle, and: fireDate)
+        }
+        navigationController?.popViewController(animated: true)
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    
+    //MARK: - Methods
+    func updateView(){
+        guard let alarm = alarm,
+              let fireDate = alarm.fireDate
+        else { return }
+        alarmFireDatePicker.date = fireDate
+        alarmTitleTextField.text = alarm.title
+        isAlarmOn = alarm.isEnabled
+        designIsEnabledButton()
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    func designIsEnabledButton(){
+        switch isAlarmOn {
+        case true:
+            alarmIsEnabledButton.backgroundColor = .black
+            alarmIsEnabledButton.setTitle("Enabled", for: .normal)
+        case false:
+            alarmIsEnabledButton.backgroundColor = .darkGray
+            alarmIsEnabledButton.setTitle("Disabled", for: .normal)
+        }
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

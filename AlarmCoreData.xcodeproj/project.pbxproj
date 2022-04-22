@@ -21,6 +21,7 @@
 		C923F12B28126E5000367555 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923F12A28126E5000367555 /* DateHelper.swift */; };
 		C923F12D281271E000367555 /* AlarmListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923F12C281271E000367555 /* AlarmListTableViewController.swift */; };
 		C923F12F2812726700367555 /* AlarmDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923F12E2812726700367555 /* AlarmDetailTableViewController.swift */; };
+		C923F13128128D8F00367555 /* AlarmScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923F13028128D8F00367555 /* AlarmScheduler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		C923F12A28126E5000367555 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		C923F12C281271E000367555 /* AlarmListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListTableViewController.swift; sourceTree = "<group>"; };
 		C923F12E2812726700367555 /* AlarmDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmDetailTableViewController.swift; sourceTree = "<group>"; };
+		C923F13028128D8F00367555 /* AlarmScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmScheduler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 		C923F11F28125F7E00367555 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
+				C923F13028128D8F00367555 /* AlarmScheduler.swift */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				C923F1002812569B00367555 /* AppDelegate.swift in Sources */,
 				C923F10A2812569B00367555 /* AlarmCoreData.xcdatamodeld in Sources */,
 				C923F12128125F9900367555 /* Strings.swift in Sources */,
+				C923F13128128D8F00367555 /* AlarmScheduler.swift in Sources */,
 				C923F129281268F600367555 /* AlarmTableViewCell.swift in Sources */,
 				C923F12F2812726700367555 /* AlarmDetailTableViewController.swift in Sources */,
 				C923F1252812614300367555 /* CoreDataStack.swift in Sources */,

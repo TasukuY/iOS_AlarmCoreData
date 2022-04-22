@@ -162,6 +162,9 @@
                                                     <state key="normal" title="On">
                                                         <color key="titleColor" red="0.95001000170000005" green="0.66480565069999997" blue="0.23398077489999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="alarmIsEnabledButtonTapped:" destination="wk4-33-d8w" eventType="touchUpInside" id="hRF-nM-yrf"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" red="0.102625601" green="0.14047515390000001" blue="0.1764756143" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -182,8 +185,17 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Gfp-sD-3zt">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ads-nq-vAW"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ads-nq-vAW">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="wk4-33-d8w" id="c7J-r6-IfV"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="alarmFireDatePicker" destination="Efi-Cr-rob" id="nXt-Y5-QSv"/>
+                        <outlet property="alarmIsEnabledButton" destination="RF0-Od-chG" id="oI1-Xy-Ei0"/>
+                        <outlet property="alarmTitleTextField" destination="7V7-7S-Rmh" id="BR8-M8-nGp"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kE7-uq-Wnt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

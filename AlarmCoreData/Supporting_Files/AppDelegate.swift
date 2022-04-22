@@ -22,32 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { [self] authorized, error in
-            if let error = error {
-                print("there was an error requesting to show local notifications: \(error)")
-            }
-            
-            if authorized {
-                UNUserNotificationCenter.current().delegate = self
-                self.setNotificationCategories()
-                print("✅ User granted authorization to show local notification")
-            }else {
-                print("🛑 User denied authorization to show local notification")
-            }
-        }
-        
-        return true
-    }
-    
-    
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        return true
-    }
-
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
@@ -110,5 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }//End of class
 
 extension AppDelegate: UNUserNotificationCenterDelegate{
-    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.sound, .badge, .banner])
+    }
 }

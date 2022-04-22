@@ -24,6 +24,7 @@ class AlarmController {
         let newAlarm = Alarm(title: title, fireDate: fireDate, isEnabled: true)
         alarms.append(newAlarm)
         CoreDataStack.saveContext()
+        scheduleUserNotifications(for: newAlarm)
     }
 
     func update(alarm: Alarm, newTitle: String, newFireDate: Date, isEnabled: Bool){
@@ -31,11 +32,22 @@ class AlarmController {
         alarm.fireDate = newFireDate
         alarm.isEnabled = isEnabled
         CoreDataStack.saveContext()
+        cancelUserNotifications(for: alarm)
+        if alarm.isEnabled {
+            scheduleUserNotifications(for: alarm)
+        }else {
+            cancelUserNotifications(for: alarm)
+        }
     }
 
     func toggleIsEnabledFor(alarm: Alarm){
         alarm.isEnabled = !alarm.isEnabled
         CoreDataStack.saveContext()
+        if alarm.isEnabled {
+            scheduleUserNotifications(for: alarm)
+        }else {
+            cancelUserNotifications(for: alarm)
+        }
     }
 
     func delete(alarm: Alarm){
@@ -43,6 +55,7 @@ class AlarmController {
         alarms.remove(at: index)
         CoreDataStack.context.delete(alarm)
         CoreDataStack.saveContext()
+        cancelUserNotifications(for: alarm)
     }
 
     //MARK: - Methods
@@ -53,3 +66,6 @@ class AlarmController {
     
     
 }//End of class
+
+
+extension AlarmController: AlarmScheduler{}

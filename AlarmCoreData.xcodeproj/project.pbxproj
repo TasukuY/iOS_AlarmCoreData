@@ -19,6 +19,8 @@
 		C923F127281263A600367555 /* AlarmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923F126281263A600367555 /* AlarmController.swift */; };
 		C923F129281268F600367555 /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923F128281268F600367555 /* AlarmTableViewCell.swift */; };
 		C923F12B28126E5000367555 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923F12A28126E5000367555 /* DateHelper.swift */; };
+		C923F12D281271E000367555 /* AlarmListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923F12C281271E000367555 /* AlarmListTableViewController.swift */; };
+		C923F12F2812726700367555 /* AlarmDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923F12E2812726700367555 /* AlarmDetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		C923F126281263A600367555 /* AlarmController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmController.swift; sourceTree = "<group>"; };
 		C923F128281268F600367555 /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
 		C923F12A28126E5000367555 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		C923F12C281271E000367555 /* AlarmListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListTableViewController.swift; sourceTree = "<group>"; };
+		C923F12E2812726700367555 /* AlarmDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmDetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,8 @@
 		C923F11C2812582C00367555 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C923F12C281271E000367555 /* AlarmListTableViewController.swift */,
+				C923F12E2812726700367555 /* AlarmDetailTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -240,9 +246,11 @@
 				C923F10A2812569B00367555 /* AlarmCoreData.xcdatamodeld in Sources */,
 				C923F12128125F9900367555 /* Strings.swift in Sources */,
 				C923F129281268F600367555 /* AlarmTableViewCell.swift in Sources */,
+				C923F12F2812726700367555 /* AlarmDetailTableViewController.swift in Sources */,
 				C923F1252812614300367555 /* CoreDataStack.swift in Sources */,
 				C923F1022812569B00367555 /* SceneDelegate.swift in Sources */,
 				C923F12B28126E5000367555 /* DateHelper.swift in Sources */,
+				C923F12D281271E000367555 /* AlarmListTableViewController.swift in Sources */,
 				C923F1232812604E00367555 /* Alarm+Convienience.swift in Sources */,
 				C923F127281263A600367555 /* AlarmController.swift in Sources */,
 			);

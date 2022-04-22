@@ -8,7 +8,8 @@
 import Foundation
 
 enum Strings {
-    
+    //Alarm List TableView Stirngs
+    static let segueToDetailVC = "toDetailVC"
     
     //Custom Cell Strings
     static let cellIdentifier = "alarmCell"

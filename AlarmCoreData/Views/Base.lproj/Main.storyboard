@@ -11,7 +11,7 @@
         <!--Alarms-->
         <scene sceneID="wED-zu-oMk">
             <objects>
-                <tableViewController id="35V-XD-SRB" sceneMemberID="viewController">
+                <tableViewController id="35V-XD-SRB" customClass="AlarmListTableViewController" customModule="AlarmCoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="QHw-ds-bL9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,7 +67,7 @@
                                     <outlet property="alarmFireDateLabel" destination="loM-cL-iRR" id="of4-f1-dlL"/>
                                     <outlet property="alarmTitleLabel" destination="tam-xY-Mib" id="DxL-KK-87u"/>
                                     <outlet property="isEnabledSwitch" destination="wOa-Ot-051" id="UZ7-xs-F9P"/>
-                                    <segue destination="wk4-33-d8w" kind="show" id="sRy-Fk-KTS"/>
+                                    <segue destination="wk4-33-d8w" kind="show" identifier="toDetailVC" id="sRy-Fk-KTS"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -88,10 +88,10 @@
             </objects>
             <point key="canvasLocation" x="-204" y="-130"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Alarm Detail Table View Controller-->
         <scene sceneID="xal-QS-bby">
             <objects>
-                <tableViewController id="wk4-33-d8w" sceneMemberID="viewController">
+                <tableViewController id="wk4-33-d8w" customClass="AlarmDetailTableViewController" customModule="AlarmCoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1b1-A4-nIM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -20,6 +20,7 @@ class AlarmTableViewCell: UITableViewCell {
     
     //MARK: - Properties
     weak var delegate: AlarmTableViewCellDelegate?
+    var indexPath: IndexPath?
     
     //MARK: - IBActions
     @IBAction func isEnabledSwitchToggled(_ sender: UISwitch) {

@@ -30,4 +30,4 @@ class CoreDataStack {
             }
         }
     }
-}
+}//End of class

@@ -18,4 +18,4 @@ extension Alarm {
         self.fireDate = fireDate
         self.isEnabled = isEnabled
     }
-}
+}//End of extension
